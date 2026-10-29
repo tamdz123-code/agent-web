@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Agent</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= MÀN HÌNH ĐĂNG NHẬP ================= -->
+<div id="view-login" class="center-screen hidden">
+  <div class="login-card">
+    <div class="login-logo">🤖</div>
+    <h1>AI Agent</h1>
+    <p class="login-sub">Nhập mật khẩu để sử dụng</p>
+    <input type="password" id="loginPassword" placeholder="Mật khẩu" autocomplete="current-password">
+    <button id="loginBtn" class="btn primary">Vào trang</button>
+    <div id="loginError" class="login-error"></div>
+  </div>
+</div>
+
+<!-- ================= ỨNG DỤNG CHÍNH ================= -->
+<div id="app" class="hidden">
+  <aside id="sidebar">
+    <div class="brand">🤖 AI Agent</div>
+    <button id="newChatBtn" class="btn ghost wide">＋ Trò chuyện mới</button>
+    <div class="side-label">Sessions <span id="sessionCount" class="side-count"></span></div>
+    <div id="sessionList"></div>
+    <div class="side-foot">
+      <button id="adminBtn" class="btn ghost small">⚙ Admin</button>
+      <button id="logoutBtn" class="btn ghost small">Đăng xuất</button>
+    </div>
+  </aside>
+
+  <main id="main">
+    <!-- ----- chat ----- -->
+    <section id="view-chat" class="pane">
+      <div id="chatLog"></div>
+      <div id="chatBar">
+        <textarea id="chatInput" rows="1" placeholder="Hỏi bất cứ điều gì... hoặc thử: viết script python tính số nguyên tố nhỏ hơn 1000 rồi chạy"></textarea>
+        <button id="sendBtn" class="btn primary">Gửi</button>
+      </div>
+    </section>
+
+    <!-- ----- chi tiết session ----- -->
+    <section id="view-session" class="pane hidden">
+      <div id="sessionHeader"></div>
+      <div id="sessionBody"></div>
+      <div id="askBar" class="hidden">
+        <input type="text" id="askInput" placeholder="Yêu cầu tiếp theo cho session này...">
+        <button id="askBtn" class="btn primary">Gửi</button>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- ================= MODAL ADMIN ================= -->
+<div id="adminModal" class="modal hidden">
+  <div class="modal-card">
+    <h2>⚙ Admin</h2>
+    <div class="admin-row">
+      <input type="password" id="adminKeyInput" placeholder="Admin key">
+      <button id="adminLoadBtn" class="btn primary">Xem tất cả</button>
+    </div>
+    <div id="adminStats" class="admin-stats"></div>
+    <div id="adminList"></div>
+    <button id="adminCloseBtn" class="btn ghost wide">Đóng</button>
+  </div>
+</div>
+
+<div id="toast" class="hidden"></div>
+
+<script src="app.js"></script>
+</body>
+</html>

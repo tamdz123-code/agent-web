@@ -1,0 +1,2 @@
+# agent-bot không cần gói ngoài, chỉ dùng thư viện chuẩn của Python.
+# File này giữ chỗ để repo dễ nhận diện dự án Python.
